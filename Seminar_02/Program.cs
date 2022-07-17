@@ -26,7 +26,16 @@ namespace ConsoleApp
 			{
 			//Напишите программу, которая с помощью деления выводит третью цифру заданного числа
 			//или сообщает, что третьей цифры нет.
-			
+				Console.Write("Введите число: ");
+				string number = Console.ReadLine();
+				if (number.Length > 2)
+				{
+				Console.WriteLine(number[2]);
+				}
+				else
+				{
+					Console.WriteLine("В числе нет третьей цифры!");
+				}
 			
 			}
 			
@@ -34,7 +43,20 @@ namespace ConsoleApp
 			{
 			//Напишите программу, которая принимает на вход цифру, обозначающую день недели, 
 			//и проверяет, является ли этот день выходным.
-			
+				Console.Write("Введите цифру, обозначающую день недели:  ");
+				int day = Convert.ToInt32(Console.ReadLine());
+				if (day == 6 || day == 7)
+				{
+					Console.WriteLine("Ура! Выходной!");
+				}
+				else if (day >= 1 && day <= 5)
+				{
+					Console.WriteLine("Это будний день, работай bro!");
+				}
+				else
+				{
+					Console.WriteLine("Некорректный ввод, введи цифру от 1 до 7");
+				}
 			
 			}
 
