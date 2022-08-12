@@ -10,8 +10,8 @@ namespace Exercise
 			void Exercise_34()
 			{
 				// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-                // Напишите программу, которая покажет количество чётных чисел в массиве.
-                // Output: [345, 897, 568, 234] -> 2
+               			// Напишите программу, которая покажет количество чётных чисел в массиве.
+               			// Output: [345, 897, 568, 234] -> 2
 
 				Random random = new Random();
 				int size = random.Next(5, 11); //длина массива от 5 до 10
@@ -48,12 +48,12 @@ namespace Exercise
 					Console.WriteLine();
 				}		
 
-            }
+         		}
 			void Exercise_36()
 			{
 				// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 				// Найдите сумму элементов, стоящих на нечётных позициях. 
-                // Output: [3, 7, 23, 12] -> 19 или [-4, -6, 89, 6] -> 0
+                		// Output: [3, 7, 23, 12] -> 19 или [-4, -6, 89, 6] -> 0
 				
 				Random random = new Random();
 				int size = random.Next(5, 11);
@@ -89,34 +89,34 @@ namespace Exercise
 					}
 					Console.WriteLine();
 				}		
-            }
+           		}
 
 			void Exercise_38()
 			{
 				// Задача 38: Задайте массив вещественных чисел. Найдите разницу
 				// между максимальным и минимальным элементов массива. 
-                // Output: [3,21 7,04 22,93 -2,71 78,24] -> 75,53
+                		// Output: [3,21 7,04 22,93 -2,71 78,24] -> 75,53
                
-			    double[] array = new double[5];
-                Random rand = new Random();
-                double max = array [0];
+			   	double[] array = new double[5];
+               			Random rand = new Random();
+                		double max = array [0];
 				double min = array [0];
 
 				for (int i = 0; i < array.Length; i++)
 				{
-                    array[i] = Math.Round(rand.NextDouble() * 10 - 5, 2);
-              		Console.Write(array[i] + "\t");
+                    			array[i] = Math.Round(rand.NextDouble() * 10 - 5, 2);
+              				Console.Write(array[i] + "\t");
 				}
 				Console.WriteLine();
                
 				for (int i = 1; i < array.Length; i++)
 				{
-                    if (array[i] > max ) max = array [i];
+                    			if (array[i] > max ) max = array [i];
 					else if (array[i] < max ) min = array [i];
 				}
 				double difference = Math.Round(max - min, 2);
 				Console.WriteLine($"Разница между максимальным {max} и минимальным {min} элементами массива: {difference}");
-           		Console.WriteLine();
+           			Console.WriteLine();
 		    }
 
 			//Exercise_34();
