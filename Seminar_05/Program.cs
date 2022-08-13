@@ -99,8 +99,6 @@ namespace Exercise
                
 			    double[] array = new double[5];
                 Random rand = new Random();
-                double max = array [0];
-				double min = array [0];
 
 				for (int i = 0; i < array.Length; i++)
 				{
@@ -108,7 +106,8 @@ namespace Exercise
               		Console.Write(array[i] + "\t");
 				}
 				Console.WriteLine();
-               
+                double max = array [0];
+				double min = array [0];
 				for (int i = 1; i < array.Length; i++)
 				{
                     if (array[i] > max ) max = array [i];
@@ -121,7 +120,7 @@ namespace Exercise
 
 			//Exercise_34();
 			//Exercise_36();
-			//Exercise_38();
+			Exercise_38();
 		}
 	}
 }
