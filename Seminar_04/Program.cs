@@ -98,7 +98,7 @@ namespace Example
 												
 				for(int i = 0; i < array.Length; i++)
 				{
-					array[i] = rand.Next(-10,10);		//Заполняем случайными числами диапозоном от -10 до 10
+					array[i] = rand.Next(-10,10);		//Заполняем случайными числами от -10 до 10
 				}
 				Console.WriteLine("Не отсортированный массив:");				
 				for (int i = 0; i < array.Length; i++)
@@ -136,4 +136,3 @@ namespace Example
 		}
 	}
 }
-

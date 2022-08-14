@@ -120,7 +120,7 @@ namespace Exercise
 
 			//Exercise_34();
 			//Exercise_36();
-			Exercise_38();
+			//Exercise_38();
 		}
 	}
 }

@@ -59,14 +59,15 @@ namespace Example
 				//Output: 3 -> 1, 8, 27 или 5 -> 1, 8, 27, 64, 125
 					Console.Write("Ведите число N: ");
 					double num = Convert.ToDouble(Console.ReadLine());
-						Console.WriteLine("Таблица кубов от 1 до введенного числа N:");
+						Console.WriteLine("Таблица кубов от 1 до введенного числа N: ");
 					for (int i = 1; i <= num; i++)
 						Console.WriteLine(i*i*i);
 					Console.ReadLine();		
 			}
 		//Example_19();
-		Example_21();
+		//Example_21();
 		//Example_23();
+					
 		}
 	}
 }
