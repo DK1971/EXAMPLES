@@ -43,7 +43,7 @@ namespace Exercise
 				
 				for (int i = 0; i < array.Length; i++)
 				{
-				array [i] = random.Next(1, 10);
+					array [i] = random.Next(1, 10);
 				}
 				
                			Console.Write("Массив 1: ");	
@@ -61,7 +61,7 @@ namespace Exercise
 					int temp = array[i];
 					array[i] = array[maxIndex - 1];
 					array[maxIndex - 1] = temp;
-                   		 Console.Write(temp + "\t");	
+                   		 	Console.Write(temp + "\t");	
 				}
 			    	//Console.Write(array[i] + "\t");	
 			}	
@@ -98,11 +98,11 @@ namespace Exercise
 
                			while (temp > 0)
                 		{
-                    		binNumber += temp % 2 * shift;
-                    		shift *= 10;
-                    		temp /= 2;
-                	}
-                	Console.Write($"Десятичное число: {number} в двоичной системе: {binNumber}");
+                    			binNumber += temp % 2 * shift;
+                    			shift *= 10;
+                    			temp /= 2;
+                		}
+                		Console.Write($"Десятичное число: {number} в двоичной системе: {binNumber}");
             		}
 			
 			void Exercise_44()
