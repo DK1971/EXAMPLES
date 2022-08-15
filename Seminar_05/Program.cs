@@ -6,8 +6,8 @@ namespace Exercise
 	class Program
 	{
 		static void Main(string[] args)
-		{			
-			void Exercise_34()
+		{	
+ 			void Exercise_34()
 			{
 				// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
                 // Напишите программу, которая покажет количество чётных чисел в массиве.
@@ -70,7 +70,7 @@ namespace Exercise
 				Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях - {sum}.");
 				Console.WriteLine();
 
-				void FillArray (int[]array, int startN = -10, int finishN = 10)
+				/*void FillArray (int[]array, int startN = -10, int finishN = 10)
 				{
 					finishN++;
 					Random random = new Random();
@@ -88,7 +88,7 @@ namespace Exercise
 						Console.Write(array[i] + "\t");
 					}
 					Console.WriteLine();
-				}		
+				}*/
             }
 
 			void Exercise_38()
@@ -121,6 +121,26 @@ namespace Exercise
 			//Exercise_34();
 			//Exercise_36();
 			//Exercise_38();
+			
+        }
+		static void FillArray (int[]array, int startN = -10, int finishN = 10)
+		{
+			finishN++;
+			Random random = new Random();
+			for (int i = 0; i < array.Length; i++)
+			{
+				array [i] = random.Next(startN, finishN);
+			}
+		}
+					
+		static void PrintArray (int[]array)
+		{
+			Console.WriteLine("Массив: ");
+			for (int i = 0; i < array.Length; i++)
+			{
+				Console.Write(array[i] + "\t");
+			}
+			Console.WriteLine();
 		}
 	}
 }
