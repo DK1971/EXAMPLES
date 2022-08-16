@@ -18,8 +18,8 @@ namespace Example
                 		for (int i = 1; i <= numberA; i++)
                 		{
                     			sum += i;
-               			 }
-               			 Console.WriteLine($"Сумма чисел от 1 до {numberA} равна {sum}");
+               			}
+               			Console.WriteLine($"Сумма чисел от 1 до {numberA} равна {sum}");
 				Console.WriteLine();
 			}
 			
@@ -119,7 +119,7 @@ namespace Example
 						}
 					}
 				}
-				Console.WriteLine("Отсортированный массив:");	
+				Console.WriteLine("Отсортированный массив: ");	
 				for (int i = 0; i < array.Length; i++)
 				{
 					Console.Write(array[i] + " ");
