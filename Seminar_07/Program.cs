@@ -119,7 +119,6 @@ namespace Exercise
 			Console.WriteLine();
             }
 		}      
-
         static void PrintArray(double[,]array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -130,7 +129,6 @@ namespace Exercise
 				}
 			Console.WriteLine();
             }
-            
 		}      
 	}
 }
