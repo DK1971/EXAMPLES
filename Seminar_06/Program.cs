@@ -24,8 +24,8 @@ namespace Exercise
 				for (int i = 0; i < halfSize; i++)
 				{
 					int temp = array[i];
-					array[i] = array[maxIndex - 1];
-					array[maxIndex - 1] = temp;
+					array[i] = array[maxIndex - i];
+					array[maxIndex - i] = temp;
 				}
 				PrintArray (array);	
 			}	
@@ -150,7 +150,7 @@ namespace Exercise
          }
 
 
-		   Exercise_39();
+		   //Exercise_39();
 		   //Exercise_40();
          //Exercise_41();
          //Exercise_42();

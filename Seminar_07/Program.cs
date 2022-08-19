@@ -9,46 +9,44 @@ namespace Exercise
 		{	
  			void Exercise_47()
 			{
-			// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-			// Output: [1 2 3 4 5] -> [5 4 3 2 1] или [6 7 3 6] -> [6 3 7 6]
-				
+			// Задача 47. Задайте двумерный массив размером m×n, 
+			// заполненный случайными вещественными числами.
+							
 				Random random = new Random();
-				int size = random.Next(5, 11);
-				int[] array = new int[size];
-				FillArray (array, 0, 10);
+				int rows = random.Next(4, 8);
+                int columns = random.Next(4, 8);
+				double [,] array = new double [rows, columns];
+				FillArray (array);
 				PrintArray (array);
 				
-				int halfSize = size / 2;
-				int maxIndex = size - 1;
-				for (int i = 0; i < halfSize; i++)
-				{
-					int temp = array[i];
-					array[i] = array[maxIndex - i];
-					array[maxIndex - i] = temp;
-				}
-				PrintArray (array);	
 			}	
 
             void Exercise_50()
 			{
 			// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
             // и возвращает значение этого элемента или же указание, что такого элемента нет.
-							
-				Random random = new Random();
-				int size = random.Next(5, 11);
-				int[] array = new int[size];
-				FillArray (array, 0, 10);
-				PrintArray (array);
 				
-				int halfSize = size / 2;
-				int maxIndex = size - 1;
-				for (int i = 0; i < halfSize; i++)
+				Random random = new Random();
+				int rows = random.Next(4, 8);
+                int columns = random.Next(4, 8);
+				int [,] array = new int [rows, columns];
+				FillArray(array);
+				PrintArray(array);		
+
+				Console.WriteLine("Введите номер строки: ");
+				int row = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Введите номер столбца: ");
+				int column = Convert.ToInt32(Console.ReadLine());
+
+				if (row < rows && row >= 0 && column < columns && columns >= 0)
 				{
-					int temp = array[i];
-					array[i] = array[maxIndex - i];
-					array[maxIndex - i] = temp;
+					Console.WriteLine ($"Элементы {array [row, column]}");
 				}
-				PrintArray (array);	
+				else
+				{
+					Console.WriteLine ($"Элементы не существуют");
+				}
+				
 			}	
 
             void Exercise_52()
@@ -57,20 +55,24 @@ namespace Exercise
             // Найдите среднее арифметическое элементов в каждом столбце.
             		
 				Random random = new Random();
-				int size = random.Next(5, 11);
-				int[] array = new int[size];
+				int rows = 3;
+                int columns = 5;
+				int [,] array = new int [rows, columns];
 				FillArray (array, 0, 10);
-				PrintArray (array);
-				
-				int halfSize = size / 2;
-				int maxIndex = size - 1;
-				for (int i = 0; i < halfSize; i++)
-				{
-					int temp = array[i];
-					array[i] = array[maxIndex - i];
-					array[maxIndex - i] = temp;
-				}
 				PrintArray (array);	
+
+				Console.WriteLine();
+				for (int j = 0; j < columns; j++)
+				{
+					double sum = 0;
+					for (int i = 0; i < rows; i++)
+					{
+						sum += array[i,j];
+					}
+				Console.Write(Math.Round(sum / rows, 2) + "\t");
+				}
+				
+				
 			}	
 
         //Exercise_47();
@@ -78,25 +80,57 @@ namespace Exercise
         //Exercise_52();
        
         }
-        static void FillArray (int[]array, int startN = -10, int finishN = 10)
+        static void FillArray (int[,]array, int startN = 0, int finishN = 10)
         {
-            finishN++;
+            int rows = array.GetLength(0);
+            int columns = array.GetLength(1);
+			finishN++;
             Random random = new Random();
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < rows; i++)
             {
-                array [i] = random.Next(startN, finishN);
+				for (int j = 0; j < columns; j++)
+				{
+					array[i, j] = random.Next(startN, finishN);
+				}
             }
         }
-                        
-        static void PrintArray (int[]array)
+        static void FillArray (double[,]array)
         {
-            Console.WriteLine("Массив: ");
-            for (int i = 0; i < array.Length; i++)
+            int rows = array.GetLength(0);
+            int columns = array.GetLength(1);
+            Random random = new Random();
+            for (int i = 0; i < rows; i++)
             {
-            Console.Write(array[i] + "\t");
+                for (int j = 0; j < columns; j++)
+                {
+                    array[i , j] = Math.Round(random.NextDouble() * 10 - 5, 2);
+                }
             }
-            Console.WriteLine();
+        }
+                   
+        static void PrintArray (int[,]array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+				for (int j = 0; j < array.GetLength(1); j++)
+				{
+					Console.Write(array[i, j] + "\t");
+				}
+			Console.WriteLine();
+            }
+		}      
 
+        static void PrintArray(double[,]array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+				for (int j = 0; j < array.GetLength(1); j++)
+				{
+					Console.Write(array[i , j] + "\t");
+				}
+			Console.WriteLine();
+            }
+            
 		}      
 	}
 }
