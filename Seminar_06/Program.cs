@@ -149,33 +149,33 @@ namespace Exercise
 			    PrintArray (arraySecond);
 			 }
 
-		//Exercise_39();
-		//Exercise_40();
-        //Exercise_41();
-        //Exercise_42();
-        //Exercise_43();
-        //Exercise_44();
-        //Exercise_45();
+			//Exercise_39();
+			//Exercise_40();
+			//Exercise_41();
+			//Exercise_42();
+			//Exercise_43();
+			//Exercise_44();
+			//Exercise_45();
        
-      }
-      static void FillArray (int[]array, int startN = -10, int finishN = 10)
-      {
-         finishN++;
-         Random random = new Random();
-         for (int i = 0; i < array.Length; i++)
-         {
-            array [i] = random.Next(startN, finishN);
-         }
-      }
+		}
+		static void FillArray (int[]array, int startN = -10, int finishN = 10)
+		{
+			finishN++;
+			Random random = new Random();
+			for (int i = 0; i < array.Length; i++)
+			{
+			array [i] = random.Next(startN, finishN);
+			}
+		}
 
 		static void PrintArray (int[]array)
 		{
-			 Console.WriteLine("Массив: ");
-			 for (int i = 0; i < array.Length; i++)
-			 {
-			 Console.Write(array[i] + "\t");
-			 }
-			 Console.WriteLine();
+			Console.WriteLine("Массив: ");
+			for (int i = 0; i < array.Length; i++)
+			{
+			Console.Write(array[i] + "\t");
+			}
+			Console.WriteLine();
 
 		}      
 	}
