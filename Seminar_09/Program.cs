@@ -11,32 +11,27 @@ namespace Exercise
 			{
 			// Задача 64: Задайте значения M и N. Напишите рекурсионный метод, 
             // который выведет все натуральные числа кратные 3-ём в промежутке от M до N.
-            // Output: M = 1; N = 9 -> "3, 6, 9"; M = 13; N = 20 -> "15, 18" 
+            // Output: M = 1, N = 9 -> "3, 6, 9"; M = 13, N = 20 -> "15, 18" 
             		 
-			
-				int rows = 5;
-                		int columns = 6;
-				int [,] array = new int [rows, columns];
-				FillArray (array);
-				PrintArray (array);
-
-				for (int i = 0; i < rows; i++)
-				{
-				    for (int j = columns - 1; j > 0; j--)
-				    {
-					for (int k = 0; k < j; k++)
-					{
-					    if (array [i , k] < array [i, k + 1])
-					    {
-						int temp = array [i, k];
-						array [i, k] = array [i, k + 1];
-						array [i, k + 1] = temp;
-					    }
-					}
-				    }
+				Console.Clear();
+				int m = InputNumbers("Введите целое число M: ");
+				int n = InputNumbers("Введите целое число N: ");
+								
+				if (m < n)
+            	{
+                for (int i = m; i <= n; i++)
+					if(i %3 == 0)					
+				Console.Write(i + "\t");
 				}
-				Console.WriteLine();
-               	PrintArray(array);
+				
+				int InputNumbers(string input) 
+				{
+				Console.Write(input);
+				int output = Convert.ToInt32(Console.ReadLine());
+				return output;
+				}
+
+
 			}	
 
             void Exercise_66()
@@ -44,7 +39,37 @@ namespace Exercise
 			// Задача 66: Задайте значения M и N. Напишите рекурсионный метод, 
             // который найдёт сумму натуральных элементов в промежутке от M до N.
             // Output: M = 1; N = 15 -> 120; M = 4; N = 8 -> 30	
+				
+				Console.Clear();
+				int m = InputNumbers("Введите целое число M: ");
+				int n = InputNumbers("Введите целое число N: ");
+				
+				int temp = m;
+				if (m > n) 
+				{
+				m = n; 
+				n = temp;
+				}
 
+				PrintSumm(m, n, temp=0);
+
+				void PrintSumm(int m, int n, int summ)
+				{
+				summ = summ + n;
+				if (n <= m)
+				{
+					Console.Write($"Сумма элементов от M до N = {summ} ");
+					return;
+				}
+				PrintSumm(m, n - 1, summ);
+				}
+
+				int InputNumbers(string input) 
+				{
+				Console.Write(input);
+				int output = Convert.ToInt32(Console.ReadLine());
+				return output;
+				}
 
             }
 
@@ -75,7 +100,7 @@ namespace Exercise
                  
             }
 
-			//Exercise_64();
+			Exercise_64();
 			//Exercise_66();
             //Exercise_68();
 
